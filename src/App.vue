@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div >
     <Top></Top>
     <Main></Main>
     <Footer></Footer>
@@ -21,4 +21,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+</style>

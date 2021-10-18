@@ -5,7 +5,8 @@ import "element-ui/lib/theme-chalk/index.css";
 import Router from "vue-router";
 import Dis from "./components/dis.vue";
 import Toplist from "./components/toplist.vue";
-import MV from "./components/mv.vue"
+import MV from "./components/mv.vue";
+import New from "./components/new.vue";
 Vue.config.productionTip = false;
 
 Vue.use(ElementUI);
@@ -27,8 +28,12 @@ let router = new Router({
     },
     {
       path: "/mv",
-      component: MV
-    }
+      component: MV,
+    },
+    {
+      path: "/new",
+      component: New,
+    },
   ],
 });
 

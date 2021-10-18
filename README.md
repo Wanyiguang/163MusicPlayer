@@ -1,3 +1,4 @@
+url:wansplayer.vercel.app
 # player
 
 ## Project setup
