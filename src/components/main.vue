@@ -4,10 +4,10 @@
       <el-header>header</el-header>
       <el-container>
         <el-aside>
-          <router-link class="barLink" to="">发现音乐</router-link>
-          <router-link class="barLink" to="">推荐MV</router-link>
-          <router-link class="barLink" to="">热歌榜</router-link>
-          <router-link class="barLink" to=""></router-link>
+          <router-link class="barLink" to="/dis">发现音乐</router-link>
+          <router-link class="barLink" to="/mv">推荐MV</router-link>
+          <router-link class="barLink" to="/toplist">热歌榜</router-link>
+          <router-link class="barLink" to="/"></router-link>
         </el-aside>
         <el-main> main</el-main>
       </el-container>
@@ -18,7 +18,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+
+};
 </script>
 
 <style>
