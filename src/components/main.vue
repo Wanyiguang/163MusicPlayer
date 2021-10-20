@@ -22,7 +22,7 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 *{
   margin: 0;
   padding: 0;
@@ -40,7 +40,12 @@ export default {};
   height: 300px;
 }
 .barLink {
+  margin-left: 30px;
   text-decoration: none;
   display: block;
+  font-size: 21px;
+  color:darksalmon;
+  line-height: 2;
+
 }
 </style>

@@ -11,7 +11,7 @@
 
       <el-row v-for="(item, index) in song" :key="index">
         <el-col :span="4">
-          <span>{{ index + 1 }}</span>
+          <span class="listIndex">{{ index + 1 }}</span>
           <img class="img" :src="item.album.blurPicUrl" alt="" />
         </el-col>
         <el-col :span="6">
@@ -20,7 +20,7 @@
         <el-col :span="4">
           <span>{{ item.artists[0].name }}</span>
         </el-col>
-        <el-col :span="6"></el-col>
+        <el-col :span="6">{{item.album.name}}</el-col>
         <el-col :span="4"></el-col>
       </el-row>
     </div>
@@ -47,7 +47,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .headline span {
   color: gray;
 }
@@ -55,7 +55,10 @@ export default {
   width: 100%;
 }
 .img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
+}
+.listIndex{
+  margin-bottom: 20px;
 }
 </style>

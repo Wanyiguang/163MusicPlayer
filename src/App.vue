@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div class="root">
     <Top></Top>
     <Main></Main>
     <Footer></Footer>
@@ -7,7 +7,6 @@
 </template>
 
 <script>
-
 import Main from "./components/main.vue";
 import Top from "./components/top.vue";
 import Footer from "./components/footer.vue";
@@ -21,9 +20,10 @@ export default {
 };
 </script>
 
-<style>
-*{
+<style scoped>
+* {
   margin: 0;
   padding: 0;
 }
+
 </style>

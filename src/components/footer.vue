@@ -1,6 +1,6 @@
 <template>
   <div>
-      <audio :src="musicurl" controls="controls" autoplay></audio>
+    <audio :src="this.$store.state.musicUrl" controls="controls" autoplay></audio>
   </div>
 </template>
 
@@ -8,13 +8,13 @@
 export default {
   data() {
     return {
-      musicurl: "",
+      
     };
   },
 };
 </script>
 
-<style>
+<style scoped>
 * {
   margin: 0;
   padding: 0;
