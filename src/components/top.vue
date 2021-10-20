@@ -1,7 +1,7 @@
 <template>
   <div class="topRoot">
     <img class="img" src="../assets/top.png" alt="" />
-    <input @keydown=""  type="text" name="search" id="" value="搜索歌曲">
+    <input   type="text" name="search" id="" value="搜索歌曲">
   </div>
 </template>
 
