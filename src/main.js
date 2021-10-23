@@ -6,8 +6,8 @@ import store from "./store.js";
 import Router from "vue-router";
 
 import Dis from "./components/dis.vue";
-import Toplist from "./components/toplist.vue";
 import MV from "./components/mv.vue";
+import List from "./components/list.vue";
 import New from "./components/new.vue";
 import Result from "./components/result.vue";
 
@@ -27,12 +27,12 @@ let router = new Router({
       component: Dis,
     },
     {
-      path: "/toplist",
-      component: Toplist,
-    },
-    {
       path: "/mv",
       component: MV,
+    },
+    {
+      path: "/list",
+      component: List,
     },
     {
       path: "/new",

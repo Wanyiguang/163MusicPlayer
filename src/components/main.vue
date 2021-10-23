@@ -4,9 +4,9 @@
       <el-container>
         <el-aside>
           <router-link class="barLink" to="/dis">发现音乐</router-link>
-          <router-link class="barLink" to="/mv">推荐MV</router-link>
-          <router-link class="barLink" to="/toplist">热歌榜</router-link>
+          <router-link class="barLink" to="/list">推荐歌单</router-link>
           <router-link class="barLink" to="/new">最新音乐</router-link>
+          <router-link class="barLink" to="/mv">最新MV</router-link>
         </el-aside>
         <el-main>
           <router-view></router-view>

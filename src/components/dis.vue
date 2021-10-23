@@ -77,7 +77,6 @@ export default {
       url: "https://wans.vercel.app/personalized/newsong",
       method: "get",
     }).then((res) => {
-      console.log(res);
       this.newsong = res.data.result;
     });
     //推荐mv
@@ -85,7 +84,6 @@ export default {
       url: "https://wans.vercel.app/personalized/mv",
       method: "get",
     }).then((res) => {
-      console.log(res);
       this.mv=res.data.result;
     });
   },
