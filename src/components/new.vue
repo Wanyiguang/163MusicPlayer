@@ -71,6 +71,7 @@ export default {
             sec = "0" + sec;
           }
           this.song[i].duration = `${min}分${sec}秒`;
+          
         }
       });
     },

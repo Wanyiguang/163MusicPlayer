@@ -1,12 +1,37 @@
 <template>
   <div class="topRoot">
     <img class="img" src="../assets/top.png" alt="" />
-    <input   type="text" name="search" id="" value="搜索歌曲">
+    <input
+      @keyup.enter="search"
+      type="text"
+      name="search"
+      id=""
+      v-model="inputValue"
+    />
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      inputValue: "",
+    };
+  },
+  methods: {
+    search() {
+      if (this.inputValue == "") {
+        this.$message({
+          showClose: true,
+          message: '请输入内容',
+          type: 'warning'
+        });
+      } else {
+        this.$router.push(`/result?name=${this.inputValue}`);
+      }
+    },
+  },
+};
 </script>
 <style scoped>
 * {

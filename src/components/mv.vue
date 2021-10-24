@@ -63,6 +63,16 @@
         <p>{{ item.artistName }}</p>
       </el-col>
     </el-row>
+    <!-- 分页 -->
+    <div class="pagination">
+      <el-pagination
+        background
+        layout="prev, pager, next"
+        @current-change="changePageIndex"
+        :total="total"
+      >
+      </el-pagination>
+    </div>
   </div>
 </template>
 
@@ -75,34 +85,59 @@ export default {
       area: "全部",
       type: "全部",
       order: "上升最快",
-      total: 10,
+      total: 8,
       page: 1,
     };
   },
-  method: {
+  methods: {
     changeArea() {},
     changeType() {},
+    changePageIndex(index) {
+      this.page = index;
+      this.getData();
+    },
+    getData() {
+      axios({
+        url: "http://wans.vercel.app/mv/all",
+        methoid: "get",
+        params: {
+          limit: 8,
+          order: this.order,
+          type: this.type,
+          area: this.area,
+          offset: (this.page - 1) * 8,
+        },
+      }).then((res) => {
+        this.mv = res.data.data;
+        if (res.data.count) {
+          this.total = res.data.count;
+        }
+        console.log(res);
+        //对播放量的处理
+        for (let i = 0; i < this.mv.length; i++) {
+          let count = this.mv[i].playCount;
+          if (count > 10000) {
+            this.mv[i].playCount = `${parseInt(
+              this.mv[i].playCount / 10000
+            )}万`;
+          }
+        }
+      });
+    },
   },
   created() {
-    axios({
-      url: "http://wans.vercel.app/mv/all",
-      methoid: "get",
-      params: {
-        limit: 8,
-      },
-    }).then((res) => {
-      this.mv = res.data.data;
-      console.log(res);
-      //对播放量的处理
-      for (let i = 0; i < this.mv.length; i++) {
-        let count = this.mv[i].playCount;
-        if (count > 1000000) {
-          this.mv[i].playCount = `${parseInt(
-            this.mv[i].playCount / 1000000
-          )}万`;
-        }
-      }
-    });
+    this.getData();
+  },
+  watch: {
+    area() {
+      this.getData();
+    },
+    type() {
+      this.getData();
+    },
+    order() {
+      this.getData();
+    },
   },
 };
 </script>
@@ -112,12 +147,14 @@ export default {
   margin: 0;
   padding: 0;
 }
+.item{
+}
 .wrap {
   position: relative;
 }
 .wrap img {
-  width: 150px;
-  height: 100px;
+  width: 200px;
+  height: 150px;
 }
 .count {
   position: absolute;
@@ -130,7 +167,7 @@ export default {
   color: brown !important;
   font-weight: bolder;
 }
-.nav .row span{
+.nav .row span {
   margin-right: 10px;
   display: inline-block;
 }
