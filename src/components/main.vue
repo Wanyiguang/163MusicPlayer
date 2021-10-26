@@ -30,6 +30,7 @@ export default {};
 
 .el-main {
   height: 700px;
+  background-color: #F2F6FC;
 }
 .el-aside {
   width: 100px;

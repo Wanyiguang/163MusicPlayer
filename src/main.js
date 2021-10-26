@@ -10,10 +10,15 @@ import MV from "./components/mv.vue";
 import List from "./components/list.vue";
 import New from "./components/new.vue";
 import Result from "./components/result.vue";
+import Playlist from "./components/playlist.vue";
 
 Vue.config.productionTip = false;
-
+const originalPush = Router.prototype.push;
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch((err) => err);
+};
 Vue.use(ElementUI);
+
 Vue.use(Router);
 
 let router = new Router({
@@ -41,6 +46,10 @@ let router = new Router({
     {
       path: "/result",
       component: Result,
+    },
+    {
+      path: "/playlist",
+      component: Playlist,
     },
   ],
 });
